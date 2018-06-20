@@ -1,2 +1,1 @@
-changeTrim("standard")
-		
+changeTrim(1)

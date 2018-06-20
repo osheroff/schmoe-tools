@@ -1,2 +1,2 @@
-changeTrim("time")
+changeTrim(2)
 		

@@ -1,2 +1,2 @@
-changeTrim("loop")
+changeTrim(3)
 		

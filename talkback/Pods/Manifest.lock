@@ -1,0 +1,22 @@
+PODS:
+  - MASShortcut (2.3.6)
+
+DEPENDENCIES:
+  - MASShortcut (from `https://github.com/dstd/MASShortcut.git`, branch `feature-action-on-keyup`)
+
+EXTERNAL SOURCES:
+  MASShortcut:
+    :branch: feature-action-on-keyup
+    :git: https://github.com/dstd/MASShortcut.git
+
+CHECKOUT OPTIONS:
+  MASShortcut:
+    :commit: 73f5aa98f6c6caeba6653eac568d54dc6afb1fa3
+    :git: https://github.com/dstd/MASShortcut.git
+
+SPEC CHECKSUMS:
+  MASShortcut: 9c215e8a8a78f3d01ce56da48e2730ab66b538fa
+
+PODFILE CHECKSUM: 07b4c82c6959bf1ab760464fb86b85f0cc643cdc
+
+COCOAPODS: 1.5.3

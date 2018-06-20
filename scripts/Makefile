@@ -1,5 +1,4 @@
-
-all: Select_Standard_Trim_Tool.scpt Select_Loop_Trim_Tool.scpt Select_TCE_Trim_Tool.scpt
+all: $(shell ls -1 *.applescript | grep -v schmoe_tools_lib | sed -e 's/applescript/scpt/g')
 
 %.scpt: %.applescript schmoe_tools_lib.applescript
 	osacompile -o $@ $< schmoe_tools_lib.applescript
