@@ -17,7 +17,8 @@ class ApogeeScripting {
     
     init() {
         systemEvents = SBApplication(bundleIdentifier: "com.apple.systemevents")! as SystemEventsApplication
-        systemEvents.se
+            
+        systemEvents.sendMode = Int32(kAENoReply)
         apogeeApplication = systemEvents.applicationProcesses?().object(withName: "Apogee Maestro 2") as!  SystemEventsProcess
         apogeeWindow = apogeeApplication.windows!().object(withName: "Maestro 2") as! SystemEventsWindow
         let group = apogeeWindow.splitterGroups!().object(at: 0) as! SystemEventsSplitterGroup
