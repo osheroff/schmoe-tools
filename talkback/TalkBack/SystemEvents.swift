@@ -7,6 +7,7 @@ import ScriptingBridge
 
 @objc public protocol SBApplicationProtocol: SBObjectProtocol {
     func activate()
+    var sendMode: AESendMode { get set }
     var delegate: SBApplicationDelegate! { get set }
     var isRunning: Bool { get }
 }
