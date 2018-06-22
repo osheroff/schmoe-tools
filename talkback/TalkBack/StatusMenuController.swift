@@ -19,17 +19,7 @@ class StatusMenuController: NSObject {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     var regularIcon: NSImage?
     var talkbackEnabledIcon: NSImage?
-    let filePath = Bundle.main.url(forResource: "Apogee_Talkback", withExtension: "scpt")
-    
-    var errors: AutoreleasingUnsafeMutablePointer<NSDictionary?>?
-    var talkBackScript: NSAppleScript?
    
-
-    func initScripts() {
-        talkBackScript = NSAppleScript(contentsOf: filePath!, error: errors)
-        talkBackScript?.compileAndReturnError(errors)
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         preferencesWindow = PreferencesWindowController(windowNibName: NSNib.Name("PreferencesWindow"))
@@ -41,7 +31,6 @@ class StatusMenuController: NSObject {
         statusItem.button?.image = regularIcon
         statusItem.menu = statusMenu
         
-        initScripts()
         let apogeeScripting = ApogeeScripting()
                 
         monitor.register(MASShortcut(keyCode: UInt(kVK_F13), modifierFlags: 0), withAction: {
