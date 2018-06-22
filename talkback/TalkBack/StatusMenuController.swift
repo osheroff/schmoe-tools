@@ -26,6 +26,10 @@ class StatusMenuController: NSObject {
         statusItem.button?.image = self.talkbackEnabledIcon
     }
     
+    func unsetTalkback() {
+        statusItem.button?.image = self.regularIcon
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         preferencesWindow = PreferencesWindowController(windowNibName: NSNib.Name("PreferencesWindow"))

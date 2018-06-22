@@ -34,19 +34,26 @@ struct ActionDefinition {
     init(defaultsName: String, action: @escaping ActionFunction) {
         self.init(defaultsName: defaultsName, hotKey: nil, modifier: nil, action: action, keyUpAction: nil)
     }
+    
+    init(defaultsName: String, action: @escaping ActionFunction, keyUpAction: @escaping ActionFunction) {
+        self.init(defaultsName: defaultsName, hotKey: nil, modifier: nil, action: action, keyUpAction: keyUpAction)
+    }
 }
 
 class ActionManager {
     let apogeeScripting = ApogeeScripting()
     let statusController: StatusMenuController
     let SHIFT = NSEvent.ModifierFlags.shift
-    
+    let OPTION = NSEvent.ModifierFlags.option
+
     init(statusController: StatusMenuController) {
         self.statusController = statusController
 
         let actions =  [
-            ActionDefinition(defaultsName: "talkback-key", action: talkback),
-            ActionDefinition(defaultsName: "trimtool-key", hotKey: kVK_F6, modifier: SHIFT, action: talkback)
+            ActionDefinition(defaultsName: "talkback-key", action: talkbackOn, keyUpAction: talkbackOff),
+            ActionDefinition(defaultsName: "trimtool-key", hotKey: kVK_F6, modifier: SHIFT, action: trimTool),
+            ActionDefinition(defaultsName: "tcetool-key", hotKey: kVK_F6, modifier: OPTION, action: tceTool),
+            ActionDefinition(defaultsName: "looptool-key", hotKey: kVK_F6, modifier: [OPTION, SHIFT], action: tceTool),
         ]
         registerHotKeys(actions: actions)
     }
@@ -62,9 +69,23 @@ class ActionManager {
         }
     }
     
-    func talkback() {
-        if ( apogeeScripting.mute() ) {
+    func getTalkbackChannel() -> Int {
+        return UserDefaults.standard.integer(forKey: "talkback-channel")
+    }
+    
+    func talkbackOn() {
+        if ( apogeeScripting.mute(channel: getTalkbackChannel()) ) {
             statusController.setTalkback()
         }
     }
+    
+    func talkbackOff() {
+        if ( apogeeScripting.mute(channel: getTalkbackChannel()) ) {
+            statusController.unsetTalkback()
+        }
+    }
+
+    func trimTool() {}
+    func tceTool() {}
+    func loopTool() {}
 }
