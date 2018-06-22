@@ -12,7 +12,9 @@ import MASShortcut
 
 class StatusMenuController: NSObject {
     @IBOutlet weak var statusMenu: NSMenu!
+
     var monitor: MASShortcutMonitor! = MASShortcutMonitor.shared()
+    var preferencesWindow: PreferencesWindowController!
 
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     var regularIcon: NSImage?
@@ -21,7 +23,7 @@ class StatusMenuController: NSObject {
     
     var errors: AutoreleasingUnsafeMutablePointer<NSDictionary?>?
     var talkBackScript: NSAppleScript?
-
+   
 
     func initScripts() {
         talkBackScript = NSAppleScript(contentsOf: filePath!, error: errors)
@@ -30,6 +32,7 @@ class StatusMenuController: NSObject {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        preferencesWindow = PreferencesWindowController(windowNibName: NSNib.Name("PreferencesWindow"))
         regularIcon = NSImage(named: NSImage.Name("statusIcon"))
         regularIcon?.isTemplate = true
         talkbackEnabledIcon = NSImage(named: NSImage.Name("talkbackLive"))
@@ -52,7 +55,11 @@ class StatusMenuController: NSObject {
         })
       }
   
-      @IBAction func quitClicked(_ sender: NSMenuItem) {
-        NSApplication.shared.terminate(self)
-    }
+        @IBAction func quitClicked(_ sender: NSMenuItem) {
+            NSApplication.shared.terminate(self)
+        }
+    
+        @IBAction func preferencesClick(_ sender: NSMenuItem) {
+            preferencesWindow.showWindow(nil)
+        }
 }
