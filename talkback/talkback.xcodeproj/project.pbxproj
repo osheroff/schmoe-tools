@@ -13,7 +13,6 @@
 		B58DF35B20D7A29F005597FF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B58DF35920D7A29F005597FF /* MainMenu.xib */; };
 		B58DF36220D7A2B3005597FF /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58DF36120D7A2B3005597FF /* StatusMenuController.swift */; };
 		B58DF38420D82F48005597FF /* Pods_TalkBack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58DF38320D82F48005597FF /* Pods_TalkBack.framework */; };
-		B58DF38C20D83A4F005597FF /* Apogee_Talkback.applescript in Sources */ = {isa = PBXBuildFile; fileRef = B58DF38B20D83A4E005597FF /* Apogee_Talkback.applescript */; };
 		B58DF39120D97F49005597FF /* ApogeeScripting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58DF39020D97F49005597FF /* ApogeeScripting.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +51,6 @@
 		B58DF36120D7A2B3005597FF /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		B58DF38120D82D6D005597FF /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		B58DF38320D82F48005597FF /* Pods_TalkBack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_TalkBack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B58DF38B20D83A4E005597FF /* Apogee_Talkback.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; name = Apogee_Talkback.applescript; path = "/Users/ben/src/schmoe-tools/talkback/TalkBack/Apogee_Talkback.applescript"; sourceTree = "<absolute>"; };
 		B58DF39020D97F49005597FF /* ApogeeScripting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApogeeScripting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,7 +80,6 @@
 			children = (
 				B54E423220D984AE00A6657A /* SystemEvents.swift */,
 				B58DF36120D7A2B3005597FF /* StatusMenuController.swift */,
-				B58DF38B20D83A4E005597FF /* Apogee_Talkback.applescript */,
 				B58DF38120D82D6D005597FF /* Bridging-Header.h */,
 				B58DF35520D7A29F005597FF /* AppDelegate.swift */,
 				B58DF35720D7A29F005597FF /* Assets.xcassets */,
@@ -253,7 +250,6 @@
 				B58DF39120D97F49005597FF /* ApogeeScripting.swift in Sources */,
 				B58DF36220D7A2B3005597FF /* StatusMenuController.swift in Sources */,
 				B58DF35620D7A29F005597FF /* AppDelegate.swift in Sources */,
-				B58DF38C20D83A4F005597FF /* Apogee_Talkback.applescript in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
