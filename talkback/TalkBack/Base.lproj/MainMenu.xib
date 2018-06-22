@@ -10,7 +10,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="TalkBack" customModuleProvider="target"/>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <customObject id="iyh-kN-ClI" customClass="StatusMenuController" customModule="TalkBack" customModuleProvider="target">
@@ -20,6 +20,13 @@
         </customObject>
         <menu id="61S-fc-F8g">
             <items>
+                <menuItem title="Preferences" id="XXi-Cy-Atw">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="preferencesClick:" target="iyh-kN-ClI" id="hNC-UI-H22"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="Rut-oc-ePk"/>
                 <menuItem title="Quit" id="3JO-nN-Pge">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>

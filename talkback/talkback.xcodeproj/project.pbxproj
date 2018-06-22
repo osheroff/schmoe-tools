@@ -14,6 +14,8 @@
 		B58DF36220D7A2B3005597FF /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58DF36120D7A2B3005597FF /* StatusMenuController.swift */; };
 		B58DF38420D82F48005597FF /* Pods_TalkBack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58DF38320D82F48005597FF /* Pods_TalkBack.framework */; };
 		B58DF39120D97F49005597FF /* ApogeeScripting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58DF39020D97F49005597FF /* ApogeeScripting.swift */; };
+		B5E516E920DCA1310093A75F /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5E516E820DCA1310093A75F /* PreferencesWindow.xib */; };
+		B5E516EB20DCA3530093A75F /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E516EA20DCA3530093A75F /* PreferencesWindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,6 +54,8 @@
 		B58DF38120D82D6D005597FF /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		B58DF38320D82F48005597FF /* Pods_TalkBack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_TalkBack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B58DF39020D97F49005597FF /* ApogeeScripting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApogeeScripting.swift; sourceTree = "<group>"; };
+		B5E516E820DCA1310093A75F /* PreferencesWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
+		B5E516EA20DCA3530093A75F /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,15 +82,17 @@
 		B58DF35420D7A29F005597FF /* TalkBack */ = {
 			isa = PBXGroup;
 			children = (
-				B54E423220D984AE00A6657A /* SystemEvents.swift */,
-				B58DF36120D7A2B3005597FF /* StatusMenuController.swift */,
-				B58DF38120D82D6D005597FF /* Bridging-Header.h */,
+				B58DF39020D97F49005597FF /* ApogeeScripting.swift */,
 				B58DF35520D7A29F005597FF /* AppDelegate.swift */,
 				B58DF35720D7A29F005597FF /* Assets.xcassets */,
-				B58DF35920D7A29F005597FF /* MainMenu.xib */,
+				B58DF38120D82D6D005597FF /* Bridging-Header.h */,
 				B58DF35C20D7A29F005597FF /* Info.plist */,
+				B58DF35920D7A29F005597FF /* MainMenu.xib */,
+				B5E516E820DCA1310093A75F /* PreferencesWindow.xib */,
+				B5E516EA20DCA3530093A75F /* PreferencesWindowController.swift */,
+				B58DF36120D7A2B3005597FF /* StatusMenuController.swift */,
+				B54E423220D984AE00A6657A /* SystemEvents.swift */,
 				B58DF35D20D7A29F005597FF /* TalkBack.entitlements */,
-				B58DF39020D97F49005597FF /* ApogeeScripting.swift */,
 			);
 			path = TalkBack;
 			sourceTree = "<group>";
@@ -196,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B58DF35820D7A29F005597FF /* Assets.xcassets in Resources */,
+				B5E516E920DCA1310093A75F /* PreferencesWindow.xib in Resources */,
 				B58DF35B20D7A29F005597FF /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,6 +255,7 @@
 			files = (
 				B54E423320D984AE00A6657A /* SystemEvents.swift in Sources */,
 				B58DF39120D97F49005597FF /* ApogeeScripting.swift in Sources */,
+				B5E516EB20DCA3530093A75F /* PreferencesWindowController.swift in Sources */,
 				B58DF36220D7A2B3005597FF /* StatusMenuController.swift in Sources */,
 				B58DF35620D7A29F005597FF /* AppDelegate.swift in Sources */,
 			);
