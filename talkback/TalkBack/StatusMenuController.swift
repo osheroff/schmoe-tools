@@ -40,8 +40,7 @@ class StatusMenuController: NSObject {
         
         initScripts()
         let apogeeScripting = ApogeeScripting()
-        apogeeScripting.startWatchThread()
-        
+                
         monitor.register(MASShortcut(keyCode: UInt(kVK_F13), modifierFlags: 0), withAction: {
             if ( apogeeScripting.mute() ) {
                 self.statusItem.button?.image = self.talkbackEnabledIcon

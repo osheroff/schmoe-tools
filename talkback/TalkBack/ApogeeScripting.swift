@@ -18,7 +18,6 @@ class ApogeeScripting {
     init() {
         systemEvents = SBApplication(bundleIdentifier: "com.apple.systemevents")! as SystemEventsApplication
             
-        systemEvents.sendMode = Int32(kAENoReply)
         apogeeApplication = systemEvents.applicationProcesses?().object(withName: "Apogee Maestro 2") as!  SystemEventsProcess
         apogeeWindow = apogeeApplication.windows!().object(withName: "Maestro 2") as! SystemEventsWindow
         let group = apogeeWindow.splitterGroups!().object(at: 0) as! SystemEventsSplitterGroup
@@ -27,18 +26,20 @@ class ApogeeScripting {
         muteCheckbox = scrollArea.checkboxes!().object(at: 7) as! SystemEventsCheckbox
     }
     
-    func startWatchThread() {
-        DispatchQueue.global(qos: .userInitiated).async {
-            while ( true ) {
-                //self.actionWithWatch {
-                    self.mixerCheckbox.clickAt!([0 as NSNumber])
-                //}
-                sleep(2)
-            }
+    func flickerFocus() {
+        let frontmost = NSWorkspace.shared.frontmostApplication
+        let apogee = NSWorkspace.shared.runningApplications.first {
+            $0.bundleIdentifier == "com.apogee.Apogee-Maestro-2"
         }
+        if ( apogee != nil ) {
+            NSLog("activating window " + apogee!.localizedName!)
+            apogee?.activate(options: NSApplication.ActivationOptions.activateIgnoringOtherApps)
+            usleep(10000)
+            NSLog("activating window " + frontmost!.localizedName!)
+            frontmost?.activate(options: NSApplication.ActivationOptions.activateIgnoringOtherApps)
+        }
+        
     }
-    
-    
     func actionWithWatch(closure: () -> Void) {
         var completed = false
         DispatchQueue.global(qos: .userInitiated).async {
@@ -46,37 +47,49 @@ class ApogeeScripting {
             
             if ( completed != true) {
                 debugPrint("focusing window")
-                self.apogeeApplication.setFrontmost!(true)
-                self.apogeeApplication.setFrontmost!(false)
+                self.flickerFocus()
             }
         }
         closure()
         completed = true
     }
     
+    func withoutReply(closure: () -> Void) {
+        let oldSendMode = systemEvents.sendMode
+        systemEvents.sendMode = Int32(kAENoReply)
+        closure()
+        systemEvents.sendMode = oldSendMode
+    }
+    
     func clickMixer() -> Bool {
-        let mixerCheckboxValue = (mixerCheckbox.value as! SBObject).get() as! NSNumber?
+        NSLog("checking CB value")
+        var mixerCheckboxValue: NSNumber?
+        actionWithWatch {
+            mixerCheckboxValue = (mixerCheckbox.value as! SBObject).get() as! NSNumber?
+        }
+        NSLog("done CB value")
 
         if ( mixerCheckboxValue == nil ) {
             return false;
         }
+
         if ( mixerCheckboxValue != 1 ) {
-            debugPrint("clicking checkbox")
+            NSLog("clicking checkbox")
             //mixerCheckbox.setValue!(1 as NSNumber)
 
-            mixerCheckbox.clickAt!([0 as NSNumber])
+            actionWithWatch { mixerCheckbox.clickAt!([0 as NSNumber]) }
 
-            debugPrint("checkbox clicked")
-        }
+            NSLog("checkbox clicked")
+       }
         return true;
     }
     func mute() -> Bool {
         if ( clickMixer() ) {
-            debugPrint("clicking mute checkbox")
+            NSLog("clicking mute checkbox")
 
-            muteCheckbox.clickAt!([0 as NSNumber])
+            actionWithWatch { muteCheckbox.clickAt!([0 as NSNumber]) }
 
-            debugPrint("mute checkbox clicked")
+            NSLog("mute checkbox clicked")
             return true;
         } else {
             return false;
