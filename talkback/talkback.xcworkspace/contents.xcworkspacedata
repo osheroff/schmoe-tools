@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/ben/src/schmoe-tools/talkback/TalkBack/SystemEvents.swift">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/ben/src/schmoe-tools/talkback/TalkBack/Apogee_Talkback.applescript">
-   </FileRef>
-   <FileRef
       location = "group:talkback.xcodeproj">
    </FileRef>
    <FileRef
