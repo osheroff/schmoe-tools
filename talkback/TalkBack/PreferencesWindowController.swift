@@ -24,18 +24,10 @@ class PreferencesWindowController: NSWindowController, NSWindowDelegate {
         self.window?.makeKeyAndOrderFront(nil)
         NSApp.activate(ignoringOtherApps: true)
         
-        //let defaults = UserDefaults.standard
-        //MASShortcutBinder.shared().bindShortcut(withDefaultsKey: "talkback", toAction: talkbackShortcut)
-        talkbackShortcutView.associatedUserDefaultsKey = "talkback"
+        talkbackShortcutView.associatedUserDefaultsKey = "talkback-key"
     }
     
     @IBAction func okClicked(_ sender: Any) {
         self.window?.close()
-    }
-    
-    func windowWillClose(_ notification: Notification) {
-        let defaults = UserDefaults.standard
-
-//        delegate?.preferencesDidUpdate()
     }
 }

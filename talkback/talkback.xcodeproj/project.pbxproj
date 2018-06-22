@@ -16,6 +16,7 @@
 		B58DF39120D97F49005597FF /* ApogeeScripting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58DF39020D97F49005597FF /* ApogeeScripting.swift */; };
 		B5E516E920DCA1310093A75F /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5E516E820DCA1310093A75F /* PreferencesWindow.xib */; };
 		B5E516EB20DCA3530093A75F /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E516EA20DCA3530093A75F /* PreferencesWindowController.swift */; };
+		B5E516ED20DCDF7F0093A75F /* ActionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E516EC20DCDF7F0093A75F /* ActionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,6 +57,7 @@
 		B58DF39020D97F49005597FF /* ApogeeScripting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApogeeScripting.swift; sourceTree = "<group>"; };
 		B5E516E820DCA1310093A75F /* PreferencesWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
 		B5E516EA20DCA3530093A75F /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
+		B5E516EC20DCDF7F0093A75F /* ActionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		B58DF35420D7A29F005597FF /* TalkBack */ = {
 			isa = PBXGroup;
 			children = (
+				B5E516EC20DCDF7F0093A75F /* ActionManager.swift */,
 				B58DF39020D97F49005597FF /* ApogeeScripting.swift */,
 				B58DF35520D7A29F005597FF /* AppDelegate.swift */,
 				B58DF35720D7A29F005597FF /* Assets.xcassets */,
@@ -258,6 +261,7 @@
 				B5E516EB20DCA3530093A75F /* PreferencesWindowController.swift in Sources */,
 				B58DF36220D7A2B3005597FF /* StatusMenuController.swift in Sources */,
 				B58DF35620D7A29F005597FF /* AppDelegate.swift in Sources */,
+				B5E516ED20DCDF7F0093A75F /* ActionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

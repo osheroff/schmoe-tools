@@ -12,22 +12,18 @@ import MASShortcut
 
 class StatusMenuController: NSObject {
     @IBOutlet weak var statusMenu: NSMenu!
-
+    
     var monitor: MASShortcutMonitor! = MASShortcutMonitor.shared()
     var preferencesWindow: PreferencesWindowController!
-
+    
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    var actionManager: ActionManager?
+
     var regularIcon: NSImage?
     var talkbackEnabledIcon: NSImage?
-    let filePath = Bundle.main.url(forResource: "Apogee_Talkback", withExtension: "scpt")
     
-    var errors: AutoreleasingUnsafeMutablePointer<NSDictionary?>?
-    var talkBackScript: NSAppleScript?
-   
-
-    func initScripts() {
-        talkBackScript = NSAppleScript(contentsOf: filePath!, error: errors)
-        talkBackScript?.compileAndReturnError(errors)
+    func setTalkback() {
+        statusItem.button?.image = self.talkbackEnabledIcon
     }
     
     override func awakeFromNib() {
@@ -40,27 +36,14 @@ class StatusMenuController: NSObject {
         
         statusItem.button?.image = regularIcon
         statusItem.menu = statusMenu
-        
-        initScripts()
-        let apogeeScripting = ApogeeScripting()
-        apogeeScripting.startWatchThread()
-        
-        monitor.register(MASShortcut(keyCode: UInt(kVK_F13), modifierFlags: 0), withAction: {
-            if ( apogeeScripting.mute() ) {
-                self.statusItem.button?.image = self.talkbackEnabledIcon
-            }
-        }, onKeyUp: {
-            if ( apogeeScripting.mute() ) {
-                self.statusItem.button?.image = self.regularIcon
-            }
-        })
-      }
-  
-        @IBAction func quitClicked(_ sender: NSMenuItem) {
-            NSApplication.shared.terminate(self)
-        }
+        actionManager = ActionManager(statusController: self)
+    }
     
-        @IBAction func preferencesClick(_ sender: NSMenuItem) {
-            preferencesWindow.showWindow(nil)
-        }
+    @IBAction func quitClicked(_ sender: NSMenuItem) {
+        NSApplication.shared.terminate(self)
+    }
+    
+    @IBAction func preferencesClick(_ sender: NSMenuItem) {
+        preferencesWindow.showWindow(nil)
+    }
 }
