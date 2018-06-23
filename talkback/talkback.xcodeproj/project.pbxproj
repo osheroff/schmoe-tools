@@ -84,8 +84,8 @@
 		B58DF35420D7A29F005597FF /* TalkBack */ = {
 			isa = PBXGroup;
 			children = (
+				B5E516EE20DDE5ED0093A75F /* Scripting */,
 				B5E516EC20DCDF7F0093A75F /* ActionManager.swift */,
-				B58DF39020D97F49005597FF /* ApogeeScripting.swift */,
 				B58DF35520D7A29F005597FF /* AppDelegate.swift */,
 				B58DF35720D7A29F005597FF /* Assets.xcassets */,
 				B58DF38120D82D6D005597FF /* Bridging-Header.h */,
@@ -106,6 +106,14 @@
 				B58DF38320D82F48005597FF /* Pods_TalkBack.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B5E516EE20DDE5ED0093A75F /* Scripting */ = {
+			isa = PBXGroup;
+			children = (
+				B58DF39020D97F49005597FF /* ApogeeScripting.swift */,
+			);
+			path = Scripting;
 			sourceTree = "<group>";
 		};
 		OBJ_16 /* Tests */ = {
