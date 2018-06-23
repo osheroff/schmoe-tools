@@ -42,6 +42,7 @@ struct ActionDefinition {
 
 class ActionManager {
     let apogeeScripting = ApogeeScripting()
+    let protoolsScripting = ProToolsScripting()
     let statusController: StatusMenuController
     let SHIFT = NSEvent.ModifierFlags.shift
     let OPTION = NSEvent.ModifierFlags.option
@@ -54,6 +55,9 @@ class ActionManager {
             ActionDefinition(defaultsName: "trimtool-key", hotKey: kVK_F6, modifier: SHIFT, action: trimTool),
             ActionDefinition(defaultsName: "tcetool-key", hotKey: kVK_F6, modifier: OPTION, action: tceTool),
             ActionDefinition(defaultsName: "looptool-key", hotKey: kVK_F6, modifier: [OPTION, SHIFT], action: tceTool),
+            ActionDefinition(defaultsName: "grabbertool-key", hotKey: kVK_F8, modifier: SHIFT, action: grabberTool),
+            ActionDefinition(defaultsName: "separationtool-key", hotKey: kVK_F8, modifier: SHIFT, action: separationTool),
+            ActionDefinition(defaultsName: "objecttool-key", hotKey: kVK_F8, modifier: SHIFT, action: objectTool)
         ]
         registerHotKeys(actions: actions)
     }
@@ -85,7 +89,10 @@ class ActionManager {
         }
     }
 
-    func trimTool() {}
-    func tceTool() {}
-    func loopTool() {}
+    func trimTool() { protoolsScripting.trimTool() }
+    func tceTool() { protoolsScripting.tceTool() }
+    func loopTool() { protoolsScripting.loopTool() }
+    func grabberTool() { protoolsScripting.grabberTool() }
+    func separationTool() { protoolsScripting.separationTool() }
+    func objectTool() { protoolsScripting.objectTool() }
 }

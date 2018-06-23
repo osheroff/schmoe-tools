@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B54E423320D984AE00A6657A /* SystemEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54E423220D984AE00A6657A /* SystemEvents.swift */; };
+		B567994920DDFDB70079ED71 /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B567994820DDFDB70079ED71 /* AppleScriptObjC.framework */; };
 		B58DF35620D7A29F005597FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58DF35520D7A29F005597FF /* AppDelegate.swift */; };
 		B58DF35820D7A29F005597FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B58DF35720D7A29F005597FF /* Assets.xcassets */; };
 		B58DF35B20D7A29F005597FF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B58DF35920D7A29F005597FF /* MainMenu.xib */; };
@@ -17,6 +18,8 @@
 		B5E516E920DCA1310093A75F /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5E516E820DCA1310093A75F /* PreferencesWindow.xib */; };
 		B5E516EB20DCA3530093A75F /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E516EA20DCA3530093A75F /* PreferencesWindowController.swift */; };
 		B5E516ED20DCDF7F0093A75F /* ActionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E516EC20DCDF7F0093A75F /* ActionManager.swift */; };
+		B5E516F020DDE9330093A75F /* ProToolsScripting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E516EF20DDE9330093A75F /* ProToolsScripting.swift */; };
+		B5E516F220DDEADD0093A75F /* ProTools.applescript in Sources */ = {isa = PBXBuildFile; fileRef = B5E516F120DDEADD0093A75F /* ProTools.applescript */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,21 +33,13 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B58DF38D20D83A6B005597FF /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = Apogee_Talkback.scpt;
-			dstSubfolderSpec = 7;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8372281C06D165AE65FFA2D1 /* Pods-TalkBack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TalkBack.release.xcconfig"; path = "Pods/Target Support Files/Pods-TalkBack/Pods-TalkBack.release.xcconfig"; sourceTree = "<group>"; };
 		ADD04C95E5AD63FEB92234E9 /* Pods-TalkBack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TalkBack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TalkBack/Pods-TalkBack.debug.xcconfig"; sourceTree = "<group>"; };
 		B54E423220D984AE00A6657A /* SystemEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SystemEvents.swift; path = "/Users/ben/src/schmoe-tools/talkback/TalkBack/SystemEvents.swift"; sourceTree = "<absolute>"; };
+		B567994820DDFDB70079ED71 /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = SDKROOT; };
 		B58DF35320D7A29F005597FF /* TalkBack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkBack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B58DF35520D7A29F005597FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B58DF35720D7A29F005597FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,6 +53,8 @@
 		B5E516E820DCA1310093A75F /* PreferencesWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
 		B5E516EA20DCA3530093A75F /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		B5E516EC20DCDF7F0093A75F /* ActionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionManager.swift; sourceTree = "<group>"; };
+		B5E516EF20DDE9330093A75F /* ProToolsScripting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProToolsScripting.swift; sourceTree = "<group>"; };
+		B5E516F120DDEADD0093A75F /* ProTools.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = ProTools.applescript; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B567994920DDFDB70079ED71 /* AppleScriptObjC.framework in Frameworks */,
 				B58DF38420D82F48005597FF /* Pods_TalkBack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,6 +101,7 @@
 		B58DF38220D82F48005597FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B567994820DDFDB70079ED71 /* AppleScriptObjC.framework */,
 				B58DF38320D82F48005597FF /* Pods_TalkBack.framework */,
 			);
 			name = Frameworks;
@@ -111,7 +110,9 @@
 		B5E516EE20DDE5ED0093A75F /* Scripting */ = {
 			isa = PBXGroup;
 			children = (
+				B5E516F120DDEADD0093A75F /* ProTools.applescript */,
 				B58DF39020D97F49005597FF /* ApogeeScripting.swift */,
+				B5E516EF20DDE9330093A75F /* ProToolsScripting.swift */,
 			);
 			path = Scripting;
 			sourceTree = "<group>";
@@ -163,7 +164,6 @@
 				B58DF35120D7A29F005597FF /* Resources */,
 				B58DF36E20D7AA82005597FF /* Embed Frameworks */,
 				39E7076A7F574331B53A5B22 /* [CP] Embed Pods Frameworks */,
-				B58DF38D20D83A6B005597FF /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -266,6 +266,8 @@
 			files = (
 				B54E423320D984AE00A6657A /* SystemEvents.swift in Sources */,
 				B58DF39120D97F49005597FF /* ApogeeScripting.swift in Sources */,
+				B5E516F020DDE9330093A75F /* ProToolsScripting.swift in Sources */,
+				B5E516F220DDEADD0093A75F /* ProTools.applescript in Sources */,
 				B5E516EB20DCA3530093A75F /* PreferencesWindowController.swift in Sources */,
 				B58DF36220D7A2B3005597FF /* StatusMenuController.swift in Sources */,
 				B58DF35620D7A29F005597FF /* AppDelegate.swift in Sources */,
