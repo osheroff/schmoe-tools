@@ -9,8 +9,9 @@ import Foundation
 import AppleScriptObjC
 
 @objc(NSObject) protocol ProToolsScriptingProtocol {
-    func changeTrim(_: NSAppleEventDescriptor)
-    func changeGrabber(_: NSAppleEventDescriptor)
+    func trimTool()
+    func loopTool()
+    func tceTool()
 }
 
 class ProToolsScripting {
@@ -33,12 +34,12 @@ class ProToolsScripting {
         return NSAppleEventDescriptor(int32: i)
     }
     
-    func trimTool() { scriptObject.changeTrim(makeInt(1)) }
-    func tceTool()  { scriptObject.changeTrim(makeInt(2)) }
-    func loopTool() { scriptObject.changeTrim(makeInt(3)) }
-    func grabberTool() { scriptObject.changeGrabber(makeInt(1)) }
-    func separationTool() { scriptObject.changeGrabber(makeInt(2)) }
-    func objectTool() { scriptObject.changeGrabber(makeInt(3)) }
+    func trimTool() { scriptObject.trimTool() }
+    func tceTool()  { scriptObject.tceTool() }
+    func loopTool() { scriptObject.loopTool() }
+    func grabberTool() {  }
+    func separationTool() {  }
+    func objectTool() {  }
 
 }
 
