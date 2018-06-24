@@ -11,8 +11,6 @@ script ProToolsApplescript
     on changeTool(targetIndex, matchText, toolTitles, keyCode)
         tell application "System Events"
             global curIndex, smartToolOn
-            -- display notification "here 1"
-
 
             tell application "Pro Tools" to activate
 
@@ -43,6 +41,7 @@ script ProToolsApplescript
                         return
                     end if
                     
+
                     set curIndex to my list_position(title, toolTitles)
                     if curIndex is 0
                         display notification "error, could not find " & title & " in " & toolTitles
@@ -71,9 +70,6 @@ script ProToolsApplescript
                 -- go back to smart tool
                 key code 26 using {command down}
             end if
-
-            display notification "here 5"
-
         end tell -- system events
     end changeTool
 
