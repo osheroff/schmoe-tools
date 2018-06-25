@@ -12,6 +12,9 @@ import AppleScriptObjC
     func trimTool()
     func loopTool()
     func tceTool()
+    func grabberTool()
+    func separationTool()
+    func objectTool()
 }
 
 class ProToolsScripting {
@@ -23,23 +26,11 @@ class ProToolsScripting {
         }
     }
     
-    let scriptObject: ProToolsScriptingProtocol
+    let script: ProToolsScriptingProtocol
     
     init() {
         ProToolsScripting.load()
-        scriptObject = NSClassFromString("ProToolsApplescript")!.alloc() as! ProToolsScriptingProtocol
+        script = NSClassFromString("ProToolsApplescript")!.alloc() as! ProToolsScriptingProtocol
     }
-    
-    func makeInt(_ i: Int32) -> NSAppleEventDescriptor {
-        return NSAppleEventDescriptor(int32: i)
-    }
-    
-    func trimTool() { scriptObject.trimTool() }
-    func tceTool()  { scriptObject.tceTool() }
-    func loopTool() { scriptObject.loopTool() }
-    func grabberTool() {  }
-    func separationTool() {  }
-    func objectTool() {  }
-
 }
 

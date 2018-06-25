@@ -29,6 +29,7 @@ class ApogeeScripting {
         let apogee = NSWorkspace.shared.runningApplications.first {
             $0.bundleIdentifier == "com.apogee.Apogee-Maestro-2"
         }
+        
         if ( apogee != nil ) {
             NSLog("activating window " + apogee!.localizedName!)
             apogee?.activate(options: NSApplication.ActivationOptions.activateIgnoringOtherApps)

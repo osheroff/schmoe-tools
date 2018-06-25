@@ -30,7 +30,7 @@ struct ActionDefinition {
 
 class ActionManager {
     let apogeeScripting = ApogeeScripting()
-    let protoolsScripting = ProToolsScripting()
+    let protoolsScripting = ProToolsScripting().script
     let statusController: StatusMenuController
     let SHIFT = NSEvent.ModifierFlags.shift
     let OPTION = NSEvent.ModifierFlags.option

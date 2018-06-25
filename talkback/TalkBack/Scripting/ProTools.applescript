@@ -48,13 +48,10 @@ script ProToolsApplescript
                         return
                     end if
                 end tell -- button
-                -- display notification "here 4"
 
             end tell -- pro tools
 
             set nKeyPresses to targetIndex - curIndex
-
-            -- display notification "here 5"
 
             -- wrap around
             if nKeyPresses < 0 then
@@ -92,5 +89,17 @@ script ProToolsApplescript
 
     on loopTool()
         my changeTrim(3)
-    end 
+    end
+
+    on grabberTool()
+        my changeGrabber(1)
+    end
+
+    on separationTool()
+        my changeGrabber(2)
+    end
+
+    on objectTool()
+        my changeGrabber(3)
+    end
 end script
