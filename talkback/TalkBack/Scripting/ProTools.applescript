@@ -12,8 +12,6 @@ script ProToolsApplescript
         tell application "System Events"
             global curIndex, smartToolOn
 
-            display notification (name of first item of (processes whose frontmost is true)) as text
-
             if the (title of first item of (processes whose frontmost is true)) is not "Pro Tools" then
                 return
             end if
