@@ -12,7 +12,11 @@ script ProToolsApplescript
         tell application "System Events"
             global curIndex, smartToolOn
 
-            tell application "Pro Tools" to activate
+            display notification (name of first item of (processes whose frontmost is true)) as text
+
+            if the (title of first item of (processes whose frontmost is true)) is not "Pro Tools" then
+                return
+            end if
 
             tell group "Cursor Tool Cluster" of (first window whose name starts with "Edit:") of process "Pro Tools"
                 tell (first button whose name is "Smart Tool")
