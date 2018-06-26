@@ -17,7 +17,7 @@
                BlueprintIdentifier = "HotKey::HotKey"
                BuildableName = "HotKey.framework"
                BlueprintName = "HotKey"
-               ReferencedContainer = "container:talkback.xcodeproj">
+               ReferencedContainer = "container:SchmoeTools.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -31,7 +31,7 @@
                BlueprintIdentifier = "talkback::SchmoeTools-TalkBack"
                BuildableName = "SchmoeTools_TalkBack.framework"
                BlueprintName = "SchmoeTools-TalkBack"
-               ReferencedContainer = "container:talkback.xcodeproj">
+               ReferencedContainer = "container:SchmoeTools.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -62,7 +62,7 @@
             BlueprintIdentifier = "HotKey::HotKey"
             BuildableName = "HotKey.framework"
             BlueprintName = "HotKey"
-            ReferencedContainer = "container:talkback.xcodeproj">
+            ReferencedContainer = "container:SchmoeTools.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
