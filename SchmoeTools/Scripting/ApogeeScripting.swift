@@ -39,6 +39,7 @@ class ApogeeScripting {
         }
         
     }
+    
     func actionWithWatch(closure: () -> Void) {
         var completed = false
         DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + .milliseconds(300)) {
@@ -49,6 +50,42 @@ class ApogeeScripting {
         closure()
         completed = true
     }
+    
+    private func getChannel() -> Int? {
+         return UserDefaults.standard.integer(forKey: "talkback-channel")
+    }
+    
+    func startTalkbackWatchThread(statusController: StatusMenuController) {
+        _ = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+            let muteValue = self.getMuteValue(channel: self.getChannel())
+            if ( muteValue == true ) {
+                statusController.unsetTalkback();
+            } else if ( muteValue == false ) {
+                statusController.setTalkback();
+            }
+            
+        }
+    }
+    
+    private func getMuteCheckbox(channel: Int) -> SystemEventsCheckbox {
+        let checkboxIndex = ((channel + 1) * 2) - 1
+        let scrollArea = group.scrollAreas!().object(at: 1) as! SystemEventsScrollArea
+        return scrollArea.checkboxes!().object(at: checkboxIndex) as! SystemEventsCheckbox
+    }
+    
+    private func getMuteValue(channel: Int?) -> Bool? {
+        if ( channel == nil ) {
+            return nil;
+        }
+        let valueObj = getMuteCheckbox(channel: channel!).value as! SBObject
+        let value = valueObj.get() as! NSNumber?
+        if ( value == nil ) {
+            return nil
+        } else {
+            return value == 1
+        }
+    }
+    
     
     func clickMixer() -> Bool {
         NSLog("checking CB value")
@@ -66,7 +103,7 @@ class ApogeeScripting {
             NSLog("clicking checkbox")
             //mixerCheckbox.setValue!(1 as NSNumber)
             
-            actionWithWatch { mixerCheckbox.clickAt!([0 as NSNumber]) }
+            actionWithWatch { _ = mixerCheckbox.clickAt!([0 as NSNumber]) }
             
             NSLog("checkbox clicked")
         }
@@ -74,13 +111,11 @@ class ApogeeScripting {
     }
     
     func mute(channel: Int) -> Bool {
-        let checkboxIndex = ((channel + 1) * 2) - 1
-        let scrollArea = group.scrollAreas!().object(at: 1) as! SystemEventsScrollArea
-        let muteCheckbox = scrollArea.checkboxes!().object(at: checkboxIndex) as! SystemEventsCheckbox
+        let muteCheckbox = getMuteCheckbox(channel: channel)
 
         if ( clickMixer() ) {
             NSLog("clicking mute checkbox")
-            actionWithWatch { muteCheckbox.clickAt!([0 as NSNumber]) }
+            actionWithWatch { _ = muteCheckbox.clickAt!([0 as NSNumber]) }
             NSLog("mute checkbox clicked")
             return true;
         } else {

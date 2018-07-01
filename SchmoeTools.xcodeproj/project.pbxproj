@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B54E423320D984AE00A6657A /* SystemEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54E423220D984AE00A6657A /* SystemEvents.swift */; };
 		B567994920DDFDB70079ED71 /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B567994820DDFDB70079ED71 /* AppleScriptObjC.framework */; };
+		B5868D4420E7FCE900CAD789 /* KeyTapHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5868D4320E7FCE900CAD789 /* KeyTapHandler.swift */; };
 		B58DF35620D7A29F005597FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58DF35520D7A29F005597FF /* AppDelegate.swift */; };
 		B58DF35820D7A29F005597FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B58DF35720D7A29F005597FF /* Assets.xcassets */; };
 		B58DF35B20D7A29F005597FF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B58DF35920D7A29F005597FF /* MainMenu.xib */; };
@@ -40,6 +41,7 @@
 		ADD04C95E5AD63FEB92234E9 /* Pods-TalkBack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TalkBack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TalkBack/Pods-TalkBack.debug.xcconfig"; sourceTree = "<group>"; };
 		B54E423220D984AE00A6657A /* SystemEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemEvents.swift; sourceTree = "<group>"; };
 		B567994820DDFDB70079ED71 /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = SDKROOT; };
+		B5868D4320E7FCE900CAD789 /* KeyTapHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyTapHandler.swift; sourceTree = "<group>"; };
 		B58DF35320D7A29F005597FF /* SchmoeTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchmoeTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B58DF35520D7A29F005597FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B58DF35720D7A29F005597FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				B5E516EA20DCA3530093A75F /* PreferencesWindowController.swift */,
 				B58DF36120D7A2B3005597FF /* StatusMenuController.swift */,
 				B54E423220D984AE00A6657A /* SystemEvents.swift */,
+				B5868D4320E7FCE900CAD789 /* KeyTapHandler.swift */,
 			);
 			path = SchmoeTools;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				B5E516EB20DCA3530093A75F /* PreferencesWindowController.swift in Sources */,
 				B58DF36220D7A2B3005597FF /* StatusMenuController.swift in Sources */,
 				B58DF35620D7A29F005597FF /* AppDelegate.swift in Sources */,
+				B5868D4420E7FCE900CAD789 /* KeyTapHandler.swift in Sources */,
 				B5E516ED20DCDF7F0093A75F /* ActionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -37,9 +37,10 @@ class ActionManager {
 
     init(statusController: StatusMenuController) {
         self.statusController = statusController
+        let talkbackKeyTap = KeyTapHandler(keyDown: talkbackOn, keyUp: talkbackOff, doubleTap: talkbackToggle)
 
         let actions =  [
-            ActionDefinition(defaultsName: "talkback-key", action: talkbackOn, keyUpAction: talkbackOff),
+            ActionDefinition(defaultsName: "talkback-key", action: talkbackKeyTap.onKeyDown, keyUpAction: talkbackKeyTap.onKeyUp),
             ActionDefinition(defaultsName: "trimtool-key", hotKey: kVK_F6, modifier: SHIFT, keyUpAction: trimTool),
             ActionDefinition(defaultsName: "tcetool-key", hotKey: kVK_F6, modifier: OPTION, keyUpAction: tceTool),
             ActionDefinition(defaultsName: "looptool-key", hotKey: kVK_F6, modifier: [OPTION, SHIFT], keyUpAction: loopTool),
@@ -48,6 +49,8 @@ class ActionManager {
             ActionDefinition(defaultsName: "objecttool-key", hotKey: kVK_F8, modifier: SHIFT, keyUpAction: objectTool)
         ]
         registerHotKeys(actions: actions)
+        
+        apogeeScripting.startTalkbackWatchThread(statusController: self.statusController)
     }
     
     func registerHotKeys(actions: [ActionDefinition]) {
@@ -80,7 +83,11 @@ class ActionManager {
             statusController.unsetTalkback()
         }
     }
-
+    
+    func talkbackToggle() {
+        apogeeScripting.mute(channel: getTalkbackChannel())
+    }
+    
     func trimTool() { protoolsScripting.trimTool() }
     func tceTool() { protoolsScripting.tceTool() }
     func loopTool() { protoolsScripting.loopTool() }
